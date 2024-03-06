@@ -16,6 +16,10 @@ public class Vertice {
         return grau;
     }
 
+    public void addGrau(int value) {
+        this.grau += value;
+    }
+
     @Override
     public String toString(){
         return rotulo + ":" + grau;
