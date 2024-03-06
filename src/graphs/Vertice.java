@@ -15,4 +15,10 @@ public class Vertice {
     public int getGrau() {
         return grau;
     }
+
+    @Override
+    public String toString(){
+        return rotulo + ":" + grau;
+    }
+
 }
