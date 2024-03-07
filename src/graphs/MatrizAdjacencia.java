@@ -17,7 +17,7 @@ public class MatrizAdjacencia {
     public void conectarVertices(int indiceVerticeInicial, int indiceVerticeFinal){
         Vertice verticeInicial = vertices.get(indiceVerticeInicial);
         Vertice verticeFinal = vertices.get(indiceVerticeFinal);
-        if(indiceVerticeInicial == indiceVerticeFinal) {
+        if(indiceVerticeInicial == indiceVerticeFinal) { //loop
              matriz[indiceVerticeInicial][indiceVerticeInicial] = 1;
              verticeInicial.addGrau(2);
         } else {
