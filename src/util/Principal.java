@@ -34,6 +34,5 @@ public class Principal {
         System.out.println("Grau C: " + vertices.get(2).getGrau());
         System.out.println("Grau D: " + vertices.get(3).getGrau());
 
-
     }
 }
