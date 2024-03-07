@@ -18,13 +18,13 @@ public class MatrizAdjacencia {
         Vertice verticeInicial = vertices.get(indiceVerticeInicial);
         Vertice verticeFinal = vertices.get(indiceVerticeFinal);
         if(indiceVerticeInicial == indiceVerticeFinal) {
-            matriz[indiceVerticeInicial][indiceVerticeInicial] = 1;
-            verticeInicial.addGrau(2);
+             matriz[indiceVerticeInicial][indiceVerticeInicial] = 1;
+             verticeInicial.addGrau(2);
         } else {
-            matriz[indiceVerticeInicial][indiceVerticeFinal] = 1;
-            verticeInicial.addGrau(1);
-            matriz[indiceVerticeFinal][indiceVerticeInicial] = 1;
-            verticeFinal.addGrau(1);
+             matriz[indiceVerticeInicial][indiceVerticeFinal] = 1;
+             verticeInicial.addGrau(1);
+             matriz[indiceVerticeFinal][indiceVerticeInicial] = 1; //invertendo, já que é espelhado
+             verticeFinal.addGrau(1);
         }
 
     }
