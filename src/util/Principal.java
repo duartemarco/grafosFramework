@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static java.util.List.*;
+
 
 public class Principal {
 
@@ -23,16 +23,27 @@ public class Principal {
                 )
         );
 
-        MatrizAdjacencia matriz = new MatrizAdjacencia(vertices);
+        MatrizAdjacencia matriz = new
+                MatrizAdjacencia(vertices);
+
+        matriz.conectarVertices(0 , 0);
+        matriz.conectarVertices(0, 1);
         matriz.conectarVertices(0, 1);
         matriz.conectarVertices(0, 2);
         matriz.conectarVertices(1, 2);
         matriz.conectarVertices(1, 3);
 
+
+
         System.out.println("Grau A: " + vertices.get(0).getGrau());
         System.out.println("Grau B: " + vertices.get(1).getGrau());
         System.out.println("Grau C: " + vertices.get(2).getGrau());
         System.out.println("Grau D: " + vertices.get(3).getGrau());
+
+        System.out.println();
+        matriz.imprimir();
+
+        System.out.println("Adjacentes de C " + matriz.getAdjacentes(2));
 
     }
 }

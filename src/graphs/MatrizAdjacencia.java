@@ -1,5 +1,6 @@
 package graphs;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MatrizAdjacencia {
@@ -18,14 +19,46 @@ public class MatrizAdjacencia {
         Vertice verticeInicial = vertices.get(indiceVerticeInicial);
         Vertice verticeFinal = vertices.get(indiceVerticeFinal);
         if(indiceVerticeInicial == indiceVerticeFinal) { //loop
-             matriz[indiceVerticeInicial][indiceVerticeInicial] = 1;
+             matriz[indiceVerticeInicial][indiceVerticeInicial] += 1;
              verticeInicial.addGrau(2);
         } else {
-             matriz[indiceVerticeInicial][indiceVerticeFinal] = 1;
+             matriz[indiceVerticeInicial][indiceVerticeFinal] += 1;
              verticeInicial.addGrau(1);
-             matriz[indiceVerticeFinal][indiceVerticeInicial] = 1; //invertendo, já que é espelhado
+             matriz[indiceVerticeFinal][indiceVerticeInicial] += 1; //invertendo, já que é espelhado
              verticeFinal.addGrau(1);
         }
+    }
+
+        public List<Vertice> getAdjacentes(int indiceVertice){
+            int linha = indiceVertice;
+            List<Vertice> vizinhos = new ArrayList<>();
+
+            for(int j = 0; j < vertices.size(); j++){
+                if(matriz[linha][j] >= 1){
+                    Vertice tempVertice = vertices.get(j);
+                    vizinhos.add(tempVertice);
+
+
+                }
+            }
+
+            return vizinhos;
+
+        }
+
+        public void imprimir(){
+            for(int i = 0; i < matriz.length; i++){
+                for(int j = 0; j < matriz.length; j++){
+                    System.out.print(matriz[i][j] + " ");
+                }
+                System.out.println();
+            }
+
+
+        }
+
+
+
 
     }
-}
+
