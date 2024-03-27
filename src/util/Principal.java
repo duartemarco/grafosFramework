@@ -23,8 +23,7 @@ public class Principal {
                 )
         );
 
-        MatrizAdjacencia matriz = new
-                MatrizAdjacencia(vertices);
+        MatrizAdjacencia matriz = new MatrizAdjacencia(vertices);
 
         matriz.conectarVertices(0 , 0);
         matriz.conectarVertices(0, 1);
