@@ -1,5 +1,7 @@
 package util;
 
+import exception.QtdeMaximaException;
+import graphs.Grafo;
 import graphs.MatrizAdjacencia;
 import graphs.Vertice;
 
@@ -12,37 +14,20 @@ import java.util.List;
 public class Principal {
 
     public static void main(String[] args) {
-        Vertice v1 = new Vertice("A");
 
-        List<Vertice> vertices = new ArrayList<>(
-                Arrays.asList(
-                        new Vertice("A"),
-                        new Vertice("B"),
-                        new Vertice("C"),
-                        new Vertice("D")
-                )
-        );
+        Grafo grafo = new Grafo(6);
 
-        MatrizAdjacencia matriz = new MatrizAdjacencia(vertices);
-
-        matriz.conectarVertices(0 , 0);
-        matriz.conectarVertices(0, 1);
-        matriz.conectarVertices(0, 1);
-        matriz.conectarVertices(0, 2);
-        matriz.conectarVertices(1, 2);
-        matriz.conectarVertices(1, 3);
-
-
-
-        System.out.println("Grau A: " + vertices.get(0).getGrau());
-        System.out.println("Grau B: " + vertices.get(1).getGrau());
-        System.out.println("Grau C: " + vertices.get(2).getGrau());
-        System.out.println("Grau D: " + vertices.get(3).getGrau());
-
-        System.out.println();
-        matriz.imprimir();
-
-        System.out.println("Adjacentes de C " + matriz.getAdjacentes(2));
+        try {
+            grafo.addVertice("A");
+            grafo.addVertice("B");
+            grafo.addVertice("C");
+            grafo.addVertice("D");
+            grafo.addVertice("E");
+            grafo.addVertice("F");
+//            grafo.addVertice("G");
+        } catch (QtdeMaximaException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }
